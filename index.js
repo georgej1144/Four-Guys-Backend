@@ -12,17 +12,17 @@ if(process.env.NODE_ENV !== 'production'){
 
 app.use(express.static(path.join(__dirname,"views")))
 
-app.get('/', function(req,res) {
-    res.sendFile('views/root_redirect.html', {root: __dirname})
+//app.get('/', function(req,res) {
+//    res.sendFile('views/root_redirect.html', {root: __dirname})
+//});
+
+app.get('/', function (req, res) {
+    res.sendFile('views/BlankBuild/index.html', {root: __dirname})
 });
 
-app.get('/blank', function (req, res) {
-    res.sendFile('views/BlankBuild/index.html', {root: __dirname})
-})
-
-app.get('/webgl', function (req, res) {
-    res.sendFile('views/WebGL_Build/index.html', {root: __dirname})
-})
+//app.get('/webgl', function (req, res) {
+//    res.sendFile('views/WebGL_Build/index.html', {root: __dirname})
+//})
 
 const run = http.listen(PORT, () => {
     console.log("server is running!");

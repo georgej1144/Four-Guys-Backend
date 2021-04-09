@@ -63,7 +63,8 @@
             <div id="signed-in" class="dropdown" style="display: block">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Force Save</a>
+                    <a class="dropdown-item" href="#" onClick="testSave()">Force Save</a>
+                    <a class="dropdown-item" href="#" onClick="testFunc()">Test</a>
                     <a class="dropdown-item" href="#" onClick="signOut()">Sign Out</a>
                 </div>
             </div>
@@ -95,11 +96,11 @@
   </div>
   <script>
     var buildUrl = "BlankBuild/Build";
-    var loaderUrl = buildUrl + "/WebGL_Build.loader.js";
+    var loaderUrl = buildUrl + "/FinalBuildPrototype.loader.js";
     var config = {
-      dataUrl: buildUrl + "/WebGL_Build.data",
-      frameworkUrl: buildUrl + "/WebGL_Build.framework.js",
-      codeUrl: buildUrl + "/WebGL_Build.wasm",
+      dataUrl: buildUrl + "/FinalBuildPrototype.data",
+      frameworkUrl: buildUrl + "/FinalBuildPrototype.framework.js",
+      codeUrl: buildUrl + "/FinalBuildPrototype.wasm",
       streamingAssetsUrl: "StreamingAssets",
       companyName: "DefaultCompany",
       productName: "WebGL Test",

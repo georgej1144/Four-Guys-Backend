@@ -12,6 +12,30 @@ const auth = firebase.auth();
 
 auth.useDeviceLanguage();
 
+function signIn() {
+    auth.signInWithRedirect(provider);
+
+    auth.getRedirectResult()
+        .then((result) => {
+            var credential = result.credential;
+            var token = credential.accessToken;
+            var user = result.user;
+        }).catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            var email = error.email;
+            var credential = error.credential;
+        })
+}
+
+function signOut() {
+    auth.signOut().then(() => {
+        // Sign-out successful.
+    }).catch((error) => {
+        // An error happened.
+    });
+}
+
 auth.onAuthStateChanged(function(user) {
     if(user) {
         
@@ -41,13 +65,10 @@ auth.onAuthStateChanged(function(user) {
         console.log("signed out");
         document.getElementById('login-signin').style.display = 'block';
         document.getElementById('signed-in').style.display = 'none';
+        //potentially remove display name from browser? score1 to -1 to avoid sync errors
     }
 
 })
-
-
-
-var pPrefs;
 
 let dbVersion = 1;
 let openRequest = indexedDB.open("saveData", dbVersion);
@@ -129,59 +150,3 @@ function saveValuesDemo(trans) {        //TODO: remove when done testing
         }
     });
 };
-
-function testFunc() {
-    console.log("Winner2:");
-    console.log(pPrefs);
-    console.log(new TextDecoder("utf-8").decode(pPrefs.contents));
-}
-
-function testSave() {
-    var initOpenReq = indexedDB.open('/idbfs')
-    initOpenReq.onsuccess = function() {
-        var db = initOpenReq.result;
-        var objectStoreName = 'FILE_DATA';
-        var transaction = db.transaction(objectStoreName, 'readonly');
-        var objectStore = transaction.objectStore(objectStoreName);
-        objectStore.openCursor().onsuccess = function (event){
-            if (event.target.result){
-
-                let str = event.target.result.key;
-                let split = str.split("/");
-                console.log(split)
-                if(split[split.length-1] === "PlayerPrefs") {
-                    console.log(event.target.result.key + " winner")
-                    pPrefs = event.target.result.value;
-                }
-                var s = event.target.result.value;
-                console.log(event.target.result.key + " contents=" + (s.contents ? s.contents.length : "none"));
-                event.target.result['continue']();
-            }
-        };
-    };
-
-}       //expect serialized in b64.
-
-function signIn() {
-    auth.signInWithRedirect(provider);
-
-    auth.getRedirectResult()
-        .then((result) => {
-            var credential = result.credential;
-            var token = credential.accessToken;
-            var user = result.user;
-        }).catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        var email = error.email;
-        var credential = error.credential;
-    })
-}
-
-function signOut() {
-    auth.signOut().then(() => {
-        // Sign-out successful.
-    }).catch((error) => {
-        // An error happened.
-    });
-}

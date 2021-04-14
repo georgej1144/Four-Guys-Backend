@@ -16,9 +16,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
 
+
+    <!--<link rel="stylesheet" href="../assets/css/Header-Dark.css"> -->
+
+
+<!--    <link rel="stylesheet" href="BlankBuild/TemplateData/style.css">-->
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="BlankBuild/TemplateData/style.css">
+
+    <script src="BlankBuild/TemplateData/UnityProgress.js"></script>
+    <script src="BlankBuild/Build/UnityLoader.js"></script>
 
 
         <!-- Latest compiled and minified CSS -->
@@ -29,55 +37,58 @@
     
         <!-- Popper JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </head>
 
-<body class = "bg" style="background-image: url('BlankBuild/Recources/background2.jpg');">
+<body class = "bg">
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark">
         <ul class="navbar-nav">
             <li class="navbar-item active">
                 <a class="navbar-brand"> 4 Guys
                 </a>
             </li>
             <li class="navbar-item">
-                <a class="nav-link">
+                <a class="nav-link" style="color:white;" href='aboutUs.html'>
                     About Us
                 </a>
             </li>
         </ul>
-        <ul class="navbar-nav ml-auto"> 
-            <div id="login-signin">
-                <span class="navbar-text">
-                    <a class="login" href="#" onClick="signIn()">Log In</a>
-                </span>
-                <a class="btn btn-light action-button" role="button" href="#" onClick="signIn()">Sign Up</a>
-            </div>
 
+        <ul class="navbar-nav ml-auto">
+                <div id="login-signin">
 
+                    <span class="navbar-text">
+                        <a class="login" href="#" onClick="signIn()">Log In</a>
+                    </span>
 
-            
-            <div id="signed-in" class="dropdown" style="display: block">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#" onClick="testSave()">Force Save</a>
-                    <a class="dropdown-item" href="#" onClick="testFunc()">Test</a>
-                    <a class="dropdown-item" href="#" onClick="signOut()">Sign Out</a>
+                    <a class="btn btn-light action-button signUp" role="button" href="#" onClick="signIn()">Sign Up</a>
+
                 </div>
-            </div>
+
+                <div id="signed-in" class="dropdown" style="display: block">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Force Save</a>
+                        <a class="dropdown-item" href="#" onClick="signOut()">Sign Out</a>
+                    </div>
+                </div>
+
         </ul>
         </nav>
-
-<div class="container bar" >
         
-    <h2 class="center">
-      Bernie Sanders VS Climate Change
-    </h2>
-  </div >
-<div id="unity-container" class="unity-desktop" style='top:60%'>
+
+
+
+
+
+<div id="unity-container" class="unity-desktop">
+    <div class='bar text-center'>
+        <h2>
+            Bernie Sanders VS Climate Change
+        </h2>
+    </div>
+
     <canvas id="unity-canvas"></canvas>
     <div id="unity-loading-bar">
       <div id="unity-logo"></div>
@@ -89,9 +100,7 @@
       WebGL builds are not supported on mobile devices.
     </div>
     <div id="unity-footer">
-      <div id="unity-webgl-logo"></div>
       <div id="unity-fullscreen-button"></div>
-      <div id="unity-build-title">4 Guys</div>
     </div>
   </div>
   <script>
@@ -144,7 +153,10 @@
     document.body.appendChild(script);
 
 </script>
-    </header>
+
+
+
+
 
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>

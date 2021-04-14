@@ -2,6 +2,6 @@ This is the blank Build Connected to a simple website, the website html will be 
 Unity to the website. 
 always build using webGl, replace Build folder and TemplateData Folder, but do not replace index.html
 You have to run this code using a simple server
--for mac type in consol: python -m http.server --cgi 8000
+-for mac type in consol: python -m http.server --cgi 3000
   - then search url: http://localhost:8000/index.html
   

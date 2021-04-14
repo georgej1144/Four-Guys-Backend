@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>About the Four Guys</title>
+
+    <link rel="stylesheet" href="Recources/style1.css">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body class = "bg2">
+
+  <nav class="navbar navbar-expand-sm navbar-dark">
+    <ul class="navbar-nav">
+        <li class="navbar-item" >
+            <a class="navbar-brand" href='index.html'> 4 Guys
+            </a>
+        </li>
+        <li class="navbar-item active">
+            <a class="nav-link" style="color:white;" href='#'>
+                About Us
+            </a>
+        </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto"> 
+            <div id="login-signin">
+
+                <span class="navbar-text">
+                    <a class="login" href="#" onClick="signIn()">Log In</a>
+                </span>
+
+                <a class="btn btn-light action-button signUp" role="button" href="#" onClick="signIn()">Sign Up</a>
+
+            </div>
+            
+            <div id="signed-in" class="dropdown" style="display: block">
+                <button class="btn btn-light dropdown-toggle" type="button" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Force Save</a>
+                    <a class="dropdown-item" href="#" onClick="signOut()">Sign Out</a>
+                </div>
+            </div>
+
+    </ul>
+    </nav>
+
+
+
+
+        <div class='text-center about'>
+
+          <h5>
+            About Us
+          </h5>
+          <p>
+            Contrary to popular belief there are actually five guys in our team. 
+            As the name was already taken we chose the closest name we could get. 
+            We are five computer science students from the University of Colorado Boulder: Ben Courlang, 
+            George Johnson, Gabriel Keith, Ryan Simcox, and Erik Wolf. The game was built for the Software Development Methods 
+            and Tools class in the University of Colorado Boulder between January and April 2021. 
+            Ben Courlang was one of our skilled Unity developers. George Johnson was our backend developer and integrated our 
+            saving features and google account compatibility. Gabriel Keith was our front-end and webpage developer. 
+            Ryan Simcox was our Unity script developer and one of our graphical asset designers. Erik Wolf was another graphical 
+            asset designer along with being the project manager and one of our Unity developers.<br><br>
+            We wanted our game not just to be another escape from reality, but a fun simple game that brings awareness to a current issue 
+            in a light-hearted manner. We hope you enjoy the experience.
+
+          </p>
+        </div>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBmxx55Xy-w9UVrO8JSkHVpuNjnMDi80zU",
+            authDomain: "four-guys-website-3308.firebaseapp.com",
+            databaseURL: "https://four-guys-website-3308-default-rtdb.firebaseio.com",
+            projectId: "four-guys-website-3308",
+            storageBucket: "four-guys-website-3308.appspot.com",
+            messagingSenderId: "519824817334",
+            appId: "1:519824817334:web:821fcc3fb451facb6f7a17",
+            measurementId: "G-H3W263QGJ1"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+    </script>
+
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>

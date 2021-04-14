@@ -1,24 +1,16 @@
-let dbVersion = 1;
-let openRequest = indexedDB.open("saveData", dbVersion);
+function readData() {
+    let score1Cache = localStorage['score1'];
+    let displayNameCache = localStorage['displayName'];
 
-let toInput = "50,50,1,5,1";
-
-openRequest.onupgradeneeded = function() {
-    let db = openRequest.result;    //openRequest.version gives version
-    //new data to write for js to take
-    if(!db.objectStoreNames.contains("userVars")) {
-        db.createObjectStore("test", {keyPath: 'myID'})
-        console.log("it worked?")
+    //make sure values exist. if they don't, do nothing. we return ""
+    if(!score1Cache || !displayNameCache) {
+        return "";
     }
-};
-openRequest.onerror = function() {
-    console.log("Error", openRequest.error);
-};
-openRequest.onsuccess = function() {
-    let db = openRequest.result;
-    //continue, no new data. if version is 1, push to firebase
 
-};
-openRequest.onversionchange = function() {
-    //new save data to grab and push to firebase
+    return score1Cache + "," + displayNameCache;
+}
+
+function writeData(toWrite) {
+    localStorage['score1'] = toWrite.split(',')[0];
+    localStorage['displayName'] = toWrite.split(',')[1];
 }

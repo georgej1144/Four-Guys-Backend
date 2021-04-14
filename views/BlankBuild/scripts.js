@@ -100,7 +100,7 @@ function syncDB() { //should only be called if user is signed in and userData is
     //make sure values exist. if they don't, do nothing. we wait for WebGL to initialize data
     if(!score1Cache || !displayNameCache) {
         localStorage['score1'] = "-1";
-        localStorage['displayName'] = "-1";
+        localStorage['displayName'] = "";
     }
 
     //get user's data from firestore

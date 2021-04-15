@@ -10,6 +10,10 @@ app.get('/', function (req, res) {
     res.sendFile('views/BlankBuild/index.html', {root: __dirname})
 });
 
+app.get('/aboutUs', function (req, res) {
+    res.sendFile('views/BlankBuild/aboutUs.html', {root: __dirname})
+});
+
 const run = http.listen(PORT, () => {
     console.log("server is running!");
 })

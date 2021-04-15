@@ -13,11 +13,11 @@ let syncTimer = setInterval(syncDB, 10000);
 
 let authUser;
 
-window.onbeforeunload = function() {
-    localStorage.removeItem('score1');
-    localStorage.removeItem('displayName');
-    return '';
-};
+// window.onbeforeunload = function() {
+//     localStorage.removeItem('score1');
+//     localStorage.removeItem('displayName');
+//     return '';
+// };
 
 auth.useDeviceLanguage();
 
